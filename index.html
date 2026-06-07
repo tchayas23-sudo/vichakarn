@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปผลคะแนน O-NET 2568</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sriracha & Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sriracha&display=swap" rel="stylesheet">
+    <!-- FontAwesome for cute icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #FDFBF7;
+        }
+        .font-sriracha {
+            font-family: 'Sriracha', cursive;
+        }
+        .pastel-shadow {
+            box-shadow: 0 8px 24px rgba(180, 180, 180, 0.15);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(150, 150, 150, 0.25);
+        }
+        /* Custom scrollbar for cute look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F5F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8DCC4;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-700 pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-white border-b-4 border-dashed border-[#F0E5D1] py-6 px-4 mb-8 relative overflow-hidden">
+        <!-- Background Decorative Bubbles -->
+        <div class="absolute -top-6 -left-6 w-24 h-24 bg-pink-100 rounded-full opacity-60 filter blur-xl"></div>
+        <div class="absolute -bottom-8 right-12 w-32 h-32 bg-blue-100 rounded-full opacity-60 filter blur-xl"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-3 border border-amber-200">
+                ⭐ สรุปผลสอบระดับชาติขั้นพื้นฐาน ⭐
+            </span>
+            <h1 class="text-3xl md:text-4xl font-bold text-[#6D5D4E] tracking-tight">
+                รายงานผลคะแนน <span class="text-pink-400 font-sriracha text-4xl md:text-5xl">O-NET</span> ปีการศึกษา 2568
+            </h1>
+            <p class="text-sm md:text-base text-slate-500 mt-2 font-light">
+                สรุปสถิติและข้อมูลการพัฒนาการเรียนรู้ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 และ 6 🌸
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4">
+        
+        <!-- Toggle Tabs: ม.3 & ม.6 Selection with Chibi Avatars -->
+        <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
+            <!-- Tab ม.3 -->
+            <button onclick="switchTab('m3')" id="btn-m3" class="relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border-2 border-cyan-200 bg-cyan-50/50 shadow-md">
+                <!-- Cute Badge -->
+                <div class="absolute top-2 right-2 bg-cyan-400 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">ม.ต้น</div>
+                <!-- Chibi M.3 Character SVG representation -->
+                <div class="w-16 h-16 mb-2">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <!-- Hair background -->
+                        <path d="M20,50 Q20,20 50,20 Q80,20 80,50 C80,60 70,70 50,70 C30,70 20,60 20,50 Z" fill="#95D1CC"/>
+                        <!-- Ears -->
+                        <circle cx="18" cy="52" r="6" fill="#FFE2D1"/>
+                        <circle cx="82" cy="52" r="6" fill="#FFE2D1"/>
+                        <!-- Face -->
+                        <circle cx="50" cy="53" r="30" fill="#FFE2D1"/>
+                        <!-- Hair front/bangs -->
+                        <path d="M20,45 Q50,15 80,45 Q70,35 50,42 Q30,35 20,45 Z" fill="#75C3BC"/>
+                        <path d="M35,35 Q50,25 65,35" stroke="#75C3BC" stroke-width="4" fill="none"/>
+                        <!-- Cheeks (Blush) -->
+                        <circle cx="32" cy="58" r="5" fill="#FFB7B2" opacity="0.7"/>
+                        <circle cx="68" cy="58" r="5" fill="#FFB7B2" opacity="0.7"/>
+                        <!-- Eyes (Happy eyes) -->
+                        <path d="M30,50 Q36,45 42,50" stroke="#4A5568" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <path d="M58,50 Q64,45 70,50" stroke="#4A5568" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Mouth (Smile) -->
+                        <path d="M46,62 Q50,66 54,62" stroke="#4A5568" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Cute Hat / Ribbon -->
+                        <path d="M45,20 L55,20 L60,10 L50,15 L40,10 Z" fill="#FFAAA6"/>
+                        <circle cx="50" cy="15" r="4" fill="#FF8B94"/>
+                    </svg>
+                </div>
+                <span class="text-base font-bold text-cyan-800">ชั้นมัธยมศึกษาปีที่ 3</span>
+                <span class="text-xs text-cyan-600/80 mt-0.5">รวม 4 วิชาหลัก</span>
+            </button>
+
+            <!-- Tab ม.6 -->
+            <button onclick="switchTab('m6')" id="btn-m6" class="relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border border-slate-100 bg-white shadow-sm opacity-60">
+                <!-- Cute Badge -->
+                <div class="absolute top-2 right-2 bg-orange-400 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">ม.ปลาย</div>
+                <!-- Chibi M.6 Character SVG representation -->
+                <div class="w-16 h-16 mb-2">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <!-- Hair background -->
+                        <path d="M20,50 Q20,20 50,20 Q80,20 80,50 C80,60 70,70 50,70 C30,70 20,60 20,50 Z" fill="#FBC78C"/>
+                        <!-- Ears -->
+                        <circle cx="18" cy="52" r="6" fill="#FFE2D1"/>
+                        <circle cx="82" cy="52" r="6" fill="#FFE2D1"/>
+                        <!-- Face -->
+                        <circle cx="50" cy="53" r="30" fill="#FFE2D1"/>
+                        <!-- Hair front/bangs -->
+                        <path d="M20,45 Q50,15 80,45 Q70,35 50,42 Q30,35 20,45 Z" fill="#F49F5A"/>
+                        <!-- Cheeks (Blush) -->
+                        <circle cx="31" cy="58" r="5" fill="#FFB7B2" opacity="0.7"/>
+                        <circle cx="69" cy="58" r="5" fill="#FFB7B2" opacity="0.7"/>
+                        <!-- Eyes (Sparkly/winking) -->
+                        <path d="M30,50 Q36,45 42,50" stroke="#4A5568" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Winking eye -->
+                        <path d="M58,48 L68,54 M68,48 L58,54" stroke="#4A5568" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Mouth (Open Happy) -->
+                        <path d="M46,60 Q50,67 54,60 Z" fill="#FF8B94"/>
+                        <!-- Cute Hair clip -->
+                        <path d="M25,32 L35,30 L37,35 L27,37 Z" fill="#B5EAD7"/>
+                    </svg>
+                </div>
+                <span class="text-base font-bold text-orange-800">ชั้นมัธยมศึกษาปีที่ 6</span>
+                <span class="text-xs text-orange-600/80 mt-0.5">รวม 5 วิชาหลัก</span>
+            </button>
+        </div>
+
+        <!-- ================= CONTENT SECTION: M.3 ================= -->
+        <div id="content-m3" class="space-y-8 transition-opacity duration-300">
+            <!-- Overview Box -->
+            <div class="bg-cyan-50/40 rounded-3xl p-6 border-2 border-dashed border-cyan-200/60 flex flex-col md:flex-row items-center gap-6">
+                <div class="bg-white p-3 rounded-2xl shadow-sm border border-cyan-100 flex-shrink-0">
+                    <div class="flex items-center gap-2">
+                        <span class="flex h-3 w-3 relative">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                        </span>
+                        <span class="text-xs font-bold text-cyan-700">ภาพรวมของ ม.3</span>
+                    </div>
+                    <div class="mt-1 text-center">
+                        <span class="text-xs text-slate-400 block">วิชาพัฒนาการเด่น</span>
+                        <span class="text-lg font-bold text-emerald-600 mt-1 block">📈 คณิตศาสตร์ 94 (+1.80)</span>
+                    </div>
+                </div>
+                <p class="text-sm md:text-base text-slate-600 text-center md:text-left leading-relaxed">
+                    ผลคะแนนสอบ O-NET ม.3 ปีการศึกษา 2568 มีทิศทางที่น่าสนใจยิ่งครับ! 
+                    น้องๆ ม.3 ทำผลงานในวิชา <strong class="text-cyan-700">คณิตศาสตร์</strong> และ <strong class="text-cyan-700">ภาษาอังกฤษ</strong> ได้ดีขึ้นกว่าปีที่ผ่านมา 
+                    แต่มีวิชา <strong class="text-rose-500">ภาษาไทย</strong> ที่อาจต้องช่วยกันส่งเสริมพัฒนาเพิ่มเติมเนื่องจากค่าเฉลี่ยลดลงเล็กน้อยครับ
+                </p>
+            </div>
+
+            <!-- Main Infographic Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Side: Cards for each subject -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="text-lg font-semibold text-slate-700 flex items-center gap-2 px-1">
+                        <i class="fa-solid fa-graduation-cap text-cyan-400"></i> สถิติรายวิชา ม.3 (เรียงตามคะแนนพัฒนาการ)
+                    </h3>
+
+                    <!-- วิชา 1: คณิตศาสตร์ 94 (+1.80) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#B5EAD7] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#B5EAD7]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#B5EAD7]/30 flex items-center justify-center text-[#55A387] text-xl font-bold">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">คณิตศาสตร์ 94</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 94 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#E8F8F2] text-[#4E937A] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-up animate-bounce"></i>
+                                <span>พัฒนาการ +1.80</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">20.50</span>
+                            </div>
+                            <div class="bg-emerald-50 p-2 rounded-xl border border-emerald-100">
+                                <span class="text-[10px] text-emerald-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-emerald-700">22.30</span>
+                            </div>
+                            <div class="bg-cyan-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-cyan-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-cyan-700">26.81</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 2: ภาษาอังกฤษ 93 (+0.38) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#C7CEEA] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#C7CEEA]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#C7CEEA]/30 flex items-center justify-center text-[#7E89BD] text-xl font-bold">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">ภาษาอังกฤษ 93</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 93 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#EEF0FA] text-[#626FA4] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-up"></i>
+                                <span>พัฒนาการ +0.38</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">24.91</span>
+                            </div>
+                            <div class="bg-indigo-50 p-2 rounded-xl border border-indigo-100">
+                                <span class="text-[10px] text-indigo-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-indigo-700">25.29</span>
+                            </div>
+                            <div class="bg-cyan-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-cyan-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-cyan-700">32.46</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 3: วิทยาศาสตร์และเทคโนโลยี 95 (+0.02) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#E8DCC4] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#E8DCC4]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#E8DCC4]/30 flex items-center justify-center text-[#B09C76] text-xl font-bold">
+                                    <i class="fa-solid fa-atom"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">วิทยาศาสตร์และเทคโนโลยี 95</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 95 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#FCFAF2] text-[#A38D5C] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                                <span>ทรงตัว +0.02</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">29.06</span>
+                            </div>
+                            <div class="bg-[#FCFAF2] p-2 rounded-xl border border-amber-100">
+                                <span class="text-[10px] text-amber-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-amber-700">29.08</span>
+                            </div>
+                            <div class="bg-cyan-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-cyan-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-cyan-700">39.95</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 4: ภาษาไทย 91 (-1.12) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#FFB7B2] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#FFB7B2]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#FFB7B2]/30 flex items-center justify-center text-[#D08480] text-xl font-bold">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">ภาษาไทย 91</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 91 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#FFEBEA] text-[#D85C57] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-down"></i>
+                                <span>ลดลง -1.12</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">39.71</span>
+                            </div>
+                            <div class="bg-rose-50 p-2 rounded-xl border border-rose-100">
+                                <span class="text-[10px] text-rose-500 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-rose-600">38.59</span>
+                            </div>
+                            <div class="bg-cyan-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-cyan-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-cyan-700">47.49</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Graphic Dashboard Visualization -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-[#EAF6F6] rounded-3xl p-6 border-2 border-cyan-100 pastel-shadow">
+                        <div class="text-center pb-4 mb-4 border-b border-cyan-200/50">
+                            <h4 class="font-bold text-cyan-800 text-lg">💡 สรุปวิเคราะห์พัฒนาการ ม.3</h4>
+                            <p class="text-xs text-cyan-600">เปรียบเทียบปี 2567 VS 2568</p>
+                        </div>
+                        
+                        <!-- Visual representation of scores comparing with average -->
+                        <div class="space-y-4">
+                            <!-- Math bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>คณิตศาสตร์ (+1.80)</span>
+                                    <span>22.30 / เฉลี่ยประเทศ 26.81</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#B5EAD7] h-full rounded-l-full" style="width: 55%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 15%"></div>
+                                    <div class="bg-cyan-100 h-full rounded-r-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Eng bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>ภาษาอังกฤษ (+0.38)</span>
+                                    <span>25.29 / เฉลี่ยประเทศ 32.46</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#C7CEEA] h-full rounded-l-full" style="width: 60%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 15%"></div>
+                                    <div class="bg-cyan-100 h-full rounded-r-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Science bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>วิทยาศาสตร์ (+0.02)</span>
+                                    <span>29.08 / เฉลี่ยประเทศ 39.95</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#E8DCC4] h-full rounded-l-full" style="width: 58%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 12%"></div>
+                                    <div class="bg-cyan-100 h-full rounded-r-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Thai bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>ภาษาไทย (-1.12)</span>
+                                    <span>38.59 / เฉลี่ยประเทศ 47.49</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#FFB7B2] h-full rounded-l-full" style="width: 68%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 12%"></div>
+                                    <div class="bg-cyan-100 h-full rounded-r-full" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicators legends -->
+                        <div class="flex flex-wrap justify-center gap-4 mt-6 pt-4 border-t border-cyan-200/50 text-[10px] text-slate-500">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-[#B5EAD7] inline-block"></span>
+                                <span>คะแนนโรงเรียนเรา</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-cyan-100 inline-block"></span>
+                                <span>ระยะห่างจากเฉลี่ยประเทศ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cute Chibi Advice/Tips Card -->
+                    <div class="bg-[#FFF4F2] rounded-3xl p-6 border-2 border-dashed border-[#FFD2C9] flex gap-4 items-center">
+                        <div class="w-20 h-20 flex-shrink-0">
+                            <svg viewBox="0 0 100 100" class="w-full h-full">
+                                <circle cx="50" cy="50" r="45" fill="#FFE2D1"/>
+                                <path d="M15,40 Q50,10 85,40" stroke="#FF9AA2" stroke-width="6" fill="none"/>
+                                <circle cx="35" cy="55" r="4" fill="#4A5568"/>
+                                <circle cx="65" cy="55" r="4" fill="#4A5568"/>
+                                <path d="M45,70 Q50,75 55,70" stroke="#4A5568" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M50,15 L50,5" stroke="#FF9AA2" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="50" cy="3" r="3" fill="#FFB7B2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-amber-900 text-sm">💡 ทริคเรียนรู้สำหรับคุณครู & น้องๆ ม.3</h5>
+                            <p class="text-xs text-amber-800/80 mt-1 leading-relaxed">
+                                วิชาคณิตศาสตร์ทำดีขึ้นมาก! ขอให้รักษามาตรฐานการทำโจทย์แบบต่อเนื่อง ส่วนภาษาไทย แนะนำให้เพิ่มกิจกรรมฝึกคิดวิเคราะห์และอ่านจับใจความสัปดาห์ละ 15 นาที เพื่อดึงคะแนนกลับขึ้นมาในปีหน้านะคนเก่ง!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= CONTENT SECTION: M.6 ================= -->
+        <div id="content-m6" class="space-y-8 hidden transition-opacity duration-300">
+            <!-- Overview Box -->
+            <div class="bg-orange-50/40 rounded-3xl p-6 border-2 border-dashed border-orange-200/60 flex flex-col md:flex-row items-center gap-6">
+                <div class="bg-white p-3 rounded-2xl shadow-sm border border-orange-100 flex-shrink-0">
+                    <div class="flex items-center gap-2">
+                        <span class="flex h-3 w-3 relative">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                        </span>
+                        <span class="text-xs font-bold text-orange-700">ภาพรวมของ ม.6</span>
+                    </div>
+                    <div class="mt-1 text-center">
+                        <span class="text-xs text-slate-400 block">วิชาพัฒนาการเด่น</span>
+                        <span class="text-lg font-bold text-emerald-600 mt-1 block">📈 สังคมศึกษาฯ 02 (+7.53)</span>
+                    </div>
+                </div>
+                <p class="text-sm md:text-base text-slate-600 text-center md:text-left leading-relaxed">
+                    ผลคะแนนสอบ O-NET ม.6 ปีการศึกษา 2568 น่าประทับใจสุดๆ เลยครับ! 🎉 
+                    นักเรียนมีพัฒนาการที่สูงขึ้นในเกือบทุกรายวิชา โดยเฉพาะ <strong class="text-orange-700">สังคมศึกษาฯ</strong> ที่คะแนนพุ่งขึ้นอย่างเด่นชัดมากถึง 
+                    <strong class="text-emerald-600">+7.53 คะแนน</strong> และมีเพียงวิชา <strong class="text-rose-500">คณิตศาสตร์</strong> เท่านั้นที่ตกลงไปเพียงเล็กน้อยครับ
+                </p>
+            </div>
+
+            <!-- Main Infographic Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Side: Cards for each subject -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="text-lg font-semibold text-slate-700 flex items-center gap-2 px-1">
+                        <i class="fa-solid fa-graduation-cap text-orange-400"></i> สถิติรายวิชา ม.6 (เรียงตามคะแนนพัฒนาการ)
+                    </h3>
+
+                    <!-- วิชา 1: สังคมศึกษาฯ 02 (+7.53) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#FFD3B6] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#FFD3B6]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#FFD3B6]/30 flex items-center justify-center text-[#E5803E] text-xl font-bold">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">สังคมศึกษา ศาสนา และวัฒนธรรม 02</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 02 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#FFF3EB] text-[#D8691C] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-up animate-bounce"></i>
+                                <span class="text-emerald-600">ก้าวกระโดด +7.53</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">24.76</span>
+                            </div>
+                            <div class="bg-emerald-50 p-2 rounded-xl border border-emerald-100">
+                                <span class="text-[10px] text-emerald-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-emerald-700">32.29</span>
+                            </div>
+                            <div class="bg-orange-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-orange-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-orange-700">36.96</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 2: วิทยาศาสตร์และเทคโนโลยี 05 (+4.48) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#B5EAD7] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#B5EAD7]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#B5EAD7]/30 flex items-center justify-center text-[#55A387] text-xl font-bold">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">วิทยาศาสตร์และเทคโนโลยี 05</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 05 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#EAF8F2] text-[#429577] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-up"></i>
+                                <span>ยอดเยี่ยม +4.48</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">23.91</span>
+                            </div>
+                            <div class="bg-emerald-50 p-2 rounded-xl border border-emerald-100">
+                                <span class="text-[10px] text-emerald-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-emerald-700">28.39</span>
+                            </div>
+                            <div class="bg-orange-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-orange-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-orange-700">31.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 3: ภาษาไทย 01 (+3.11) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#FFF2CC] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#FFF2CC]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#FFF2CC]/40 flex items-center justify-center text-[#D3A92A] text-xl font-bold">
+                                    <i class="fa-solid fa-feather-pointed"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">ภาษาไทย 01</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 01 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#FFFDF2] text-[#B58D10] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-up"></i>
+                                <span>ก้าวหน้า +3.11</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">31.76</span>
+                            </div>
+                            <div class="bg-amber-50 p-2 rounded-xl border border-amber-100">
+                                <span class="text-[10px] text-amber-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-amber-700">34.87</span>
+                            </div>
+                            <div class="bg-orange-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-orange-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-orange-700">40.32</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 4: ภาษาอังกฤษ 03 (+0.02) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#C7CEEA] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#C7CEEA]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#C7CEEA]/30 flex items-center justify-center text-[#7E89BD] text-xl font-bold">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">ภาษาอังกฤษ 03</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 03 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#EEF0FA] text-[#626FA4] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                                <span>ทรงตัว +0.02</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">20.78</span>
+                            </div>
+                            <div class="bg-indigo-50 p-2 rounded-xl border border-indigo-100">
+                                <span class="text-[10px] text-indigo-600 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-indigo-700">20.80</span>
+                            </div>
+                            <div class="bg-orange-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-orange-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-orange-700">30.15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- วิชา 5: คณิตศาสตร์ 04 (-0.46) -->
+                    <div class="bg-white p-5 rounded-2xl border-l-8 border-[#FFB7B2] pastel-shadow card-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#FFB7B2]/10 rounded-full"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-[#FFB7B2]/30 flex items-center justify-center text-[#D08480] text-xl font-bold">
+                                    <i class="fa-solid fa-square-root-variable"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-lg">คณิตศาสตร์ 04</h4>
+                                    <span class="text-xs text-slate-400">รหัสวิชา 04 • สอบปี 2568</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-[#FFEBEA] text-[#D85C57] font-bold px-3 py-1.5 rounded-full text-sm">
+                                <i class="fa-solid fa-circle-arrow-down"></i>
+                                <span>ลดลงเล็กน้อย -0.46</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Bars Compare -->
+                        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-50 text-center">
+                            <div class="bg-slate-50/60 p-2 rounded-xl">
+                                <span class="text-[10px] text-slate-400 block">ปี 2567</span>
+                                <span class="text-base font-bold text-slate-500">16.68</span>
+                            </div>
+                            <div class="bg-rose-50 p-2 rounded-xl border border-rose-100">
+                                <span class="text-[10px] text-rose-500 font-medium block">ปี 2568</span>
+                                <span class="text-lg font-bold text-rose-600">16.22</span>
+                            </div>
+                            <div class="bg-orange-50/40 p-2 rounded-xl">
+                                <span class="text-[10px] text-orange-600 block">เฉลี่ยประเทศ</span>
+                                <span class="text-base font-bold text-orange-700">21.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Graphic Dashboard Visualization -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-[#FFF8F2] rounded-3xl p-6 border-2 border-orange-100 pastel-shadow">
+                        <div class="text-center pb-4 mb-4 border-b border-orange-200/50">
+                            <h4 class="font-bold text-orange-800 text-lg">💡 สรุปวิเคราะห์พัฒนาการ ม.6</h4>
+                            <p class="text-xs text-orange-600">เปรียบเทียบปี 2567 VS 2568</p>
+                        </div>
+                        
+                        <!-- Visual representation of scores comparing with average -->
+                        <div class="space-y-4">
+                            <!-- Social Science bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>สังคมศึกษาฯ (+7.53)</span>
+                                    <span>32.29 / เฉลี่ยประเทศ 36.96</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#FFD3B6] h-full rounded-l-full" style="width: 70%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 10%"></div>
+                                    <div class="bg-orange-100 h-full rounded-r-full" style="width: 20%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Science bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>วิทยาศาสตร์ (+4.48)</span>
+                                    <span>28.39 / เฉลี่ยประเทศ 31.99</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#B5EAD7] h-full rounded-l-full" style="width: 65%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 10%"></div>
+                                    <div class="bg-orange-100 h-full rounded-r-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Thai bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>ภาษาไทย (+3.11)</span>
+                                    <span>34.87 / เฉลี่ยประเทศ 40.32</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#FFF2CC] h-full rounded-l-full" style="width: 63%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 12%"></div>
+                                    <div class="bg-orange-100 h-full rounded-r-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Eng bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>ภาษาอังกฤษ (+0.02)</span>
+                                    <span>20.80 / เฉลี่ยประเทศ 30.15</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#C7CEEA] h-full rounded-l-full" style="width: 50%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 18%"></div>
+                                    <div class="bg-orange-100 h-full rounded-r-full" style="width: 32%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Math bar -->
+                            <div>
+                                <div class="flex justify-between text-xs font-bold text-slate-600 mb-1">
+                                    <span>คณิตศาสตร์ (-0.46)</span>
+                                    <span>16.22 / เฉลี่ยประเทศ 21.00</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3.5 overflow-hidden flex">
+                                    <div class="bg-[#FFB7B2] h-full rounded-l-full" style="width: 48%"></div>
+                                    <div class="bg-slate-200 h-full" style="width: 15%"></div>
+                                    <div class="bg-orange-100 h-full rounded-r-full" style="width: 37%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicators legends -->
+                        <div class="flex flex-wrap justify-center gap-4 mt-6 pt-4 border-t border-orange-200/50 text-[10px] text-slate-500">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-[#FFD3B6] inline-block"></span>
+                                <span>คะแนนโรงเรียนเรา</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3.5 h-3.5 rounded-sm bg-orange-100 inline-block"></span>
+                                <span>ระยะห่างจากเฉลี่ยประเทศ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cute Chibi Advice/Tips Card -->
+                    <div class="bg-[#FFF4F2] rounded-3xl p-6 border-2 border-dashed border-[#FFD2C9] flex gap-4 items-center">
+                        <div class="w-20 h-20 flex-shrink-0">
+                            <svg viewBox="0 0 100 100" class="w-full h-full">
+                                <circle cx="50" cy="50" r="45" fill="#FFE2D1"/>
+                                <!-- Hair -->
+                                <path d="M15,40 Q50,5 85,40" stroke="#F49F5A" stroke-width="6" fill="none"/>
+                                <circle cx="35" cy="55" r="4" fill="#4A5568"/>
+                                <circle cx="65" cy="55" r="4" fill="#4A5568"/>
+                                <!-- Smile -->
+                                <path d="M42,65 Q50,75 58,65" fill="#FF8B94"/>
+                                <circle cx="50" cy="12" r="4" fill="#B5EAD7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-amber-900 text-sm">💡 ทริคเรียนรู้สำหรับพี่ๆ ม.6</h5>
+                            <p class="text-xs text-amber-800/80 mt-1 leading-relaxed">
+                                พี่ๆ ม.6 ลุยสอบสุดพยายามมากครับ! คะแนนสังคมศึกษาเด่นกระโดดเลย สำหรับวิชาคณิตศาสตร์และภาษาอังกฤษที่คะแนนเฉลี่ยทั่วประเทศยังค่อนข้างยาก ลองเน้นแนวโจทย์ปัญหาย้อนหลังและการเรียนรู้ผ่านควิซคำศัพท์สั้นๆ วันละนิด จะช่วยเสริมความมั่นใจขึ้นได้มากครับ!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-xs text-slate-400 max-w-md mx-auto px-4">
+        <div class="border-t border-dashed border-[#F0E5D1] pt-6">
+            <p>ออกแบบรายงานผลการเรียนดโดย ครูกุลชญา ศรีสุวรรณ 💗</p>
+            <p class="mt-1">ผลคะแนนอย่างเป็นทางการจาก สทศ. (NIETS)</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript logic to switch tabs dynamically -->
+    <script>
+        function switchTab(tab) {
+            const btnM3 = document.getElementById('btn-m3');
+            const btnM6 = document.getElementById('btn-m6');
+            const contentM3 = document.getElementById('content-m3');
+            const contentM6 = document.getElementById('content-m6');
+
+            if (tab === 'm3') {
+                // Style buttons
+                btnM3.className = "relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border-2 border-cyan-200 bg-cyan-50/50 shadow-md";
+                btnM6.className = "relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border border-slate-100 bg-white shadow-sm opacity-60";
+                
+                // Toggle Content
+                contentM3.classList.remove('hidden');
+                contentM6.classList.add('hidden');
+            } else if (tab === 'm6') {
+                // Style buttons
+                btnM3.className = "relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border border-slate-100 bg-white shadow-sm opacity-60";
+                btnM6.className = "relative overflow-hidden p-4 rounded-2xl border-3 flex flex-col items-center justify-center card-hover focus:outline-none transition-all duration-300 border-2 border-orange-200 bg-orange-50/50 shadow-md";
+                
+                // Toggle Content
+                contentM3.classList.add('hidden');
+                contentM6.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
